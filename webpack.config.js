@@ -7,11 +7,16 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 
 module.exports = {
-    entry: resolve(__dirname, "src", "index"),
+    entry: {
+      app: resolve(__dirname, "src", "index")
+    },
     mode: "development",
     devtool: 'source-map',
     resolve: {
         extensions: ['.js', '.jsx', '.ts', '.tsx'],
+        alias: {
+            'react-dom': '@hot-loader/react-dom'
+        }
       },
     output: {
         path: resolve(__dirname, "build"),
@@ -33,6 +38,11 @@ module.exports = {
                 test: /\.(ts|tsx|js|jsx)/,
                 exclude: /node_modules/,
                 use: ["babel-loader"]
+            },
+            {
+                test: /\.(ts|tsx|js|jsx)/,
+                include: /node_modules/,
+                use: ['react-hot-loader/webpack'],
             },
         ]
     },

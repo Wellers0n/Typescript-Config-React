@@ -8,4 +8,3 @@ const render = () => {
 
   render();
 
-  module.hot.accept()
