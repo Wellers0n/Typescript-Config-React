@@ -5,5 +5,7 @@ import App from './app';
 const render = () => {
     ReactDOM.render(<App />, document.getElementById('app'));
   };
-  
+
   render();
+
+  module.hot.accept()

@@ -1,13 +1,7 @@
 import React from 'react';
+import { hot } from 'react-hot-loader/root'
+    
 
-export default class App extends React.Component{
-    constructor(props){
-        super(props)
-    }
+const App = () => <div>Hello World!</div>
 
-    render(){
-        return (
-            <div>Config is hard</div>
-        )
-    }
-}
+export default App
